@@ -47,8 +47,10 @@
               <a :href="link.link" v-html="link.text" :class="{'active': $page.path.includes(link.link)}" ></a>
               <ul v-if="link.children" class="submenu">
                 <li v-for="(childLink, childIndex) in link.children" :key="childIndex">
-                  <a :href="childLink.link" v-html="childLink.text"></a>
-                  </li>
+                  <a v-if="childLink.link" :href="childLink.link" v-html="childLink.text"></a>
+                  <div v-else-if="childLink.text" v-html="childLink.text"></div>
+                  <span v-else-if="childLink.type === 'divider'" class="divider"></span>
+                </li>
               </ul>
             </li>
           </ul>

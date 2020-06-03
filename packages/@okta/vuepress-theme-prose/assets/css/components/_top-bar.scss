@@ -282,12 +282,11 @@
               position: absolute;
               background-color: white;
 
-              a {
-                color: cv('cerise');
+              a,div {
+                text-decoration: none;
                 width: 100%;
                 padding: 1.0rem 1.3rem;
                 transition: color .4s;
-
               }
             }
 
@@ -305,21 +304,20 @@
                 margin-right: 0rem;
                 margin-bottom: 0rem;
 
-                &:hover {
-                  background-color: cv('cerise');
-                  color: cv('gray', '000');
-
                   a {
-                    color: cv('gray', '000');
-                    text-decoration: none;
-
-
-
-
-
-
+                    color: cv('cerise');
+                    
+                    &:hover {
+                      background-color: cv('cerise');
+                      color: cv('gray', '000');
+                    }
                   }
-                }
+
+                  .divider {
+                    border-top: 1.5px solid $text-color-light;
+                    margin: 1.0rem 1.3rem;
+                    width: 100%;
+                  }
               }
 
             }
